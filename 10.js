@@ -11,6 +11,8 @@ function HashTable() {
     this.get = get;
     this.buildChains = buildChains;
 
+    this.values = [];
+
 	function simpleHash(data) {
 		var total = 0;
 		for(var i = 0; i < data.length; i++) {
@@ -21,35 +23,31 @@ function HashTable() {
 		return total % this.table.length;
 	}
 	function put (key,data) {
-		var pos = this.simpleHash(key);
-		var index = 0;
-		if(this.table[pos][index] == undefined) {
-			this.table[pos][index] = data;
-		}else {
-			while(this.table[pos][index] != undefined) {
-				index++;
-			}
-			this.table[pos][index] = data;
-		}
+		var pos = this.betterHash(key);
+		if(this.table[pos] == undefined) {
+            this.table[pos] = key;
+            this.values[pos] = data;
+		} else {
+            while (this.table[pos]!=undefined) {
+                pos++;
+            }
+            this.table[pos] = key;
+            this.values[pos] = data;
+        }
 
     }
     
 	function get(key) {
-		var index = 0;
-		var pos = this.simpleHash(key);
-		if(this.table[pos][index] == key) {
-			return this.table[pos][index];
-		}else {
-			while(this.table[pos][index] != undefined && this.table[pos][index] != key) {
-				index++;
+        var hash = -1;
+        hash = this.betterHash(key);
+        if(hash > -1) {
+            for(var i = hash; this.table[hash] != undefined; i++) {
+                if(this.table[hash] == key) {
+                    return this.values[hash];
+                }
             }
-            if(this.table[pos][index] == undefined) {
-                return undefined;
-            } else {
-                return this.table[pos][index];
-            }
-			
-		}
+        }
+        return undefined;
 	}
 	function showDistro(){
 		for(var i = 0; i < this.table.length; i++) {
