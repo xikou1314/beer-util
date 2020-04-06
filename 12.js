@@ -16,6 +16,9 @@ function BST() {
     this.inOrder = inOrder;
     this.preOrder = preOrder;
     this.postOrder = postOrder;
+    this.getMax = getMax;
+    this.getMin = getMin;
+    this.find = find;
     
     function insert(data) {
         var n = new Node(data, null, null);
@@ -75,6 +78,36 @@ function BST() {
             console.log(node.show() + " ");
         }
     }
+
+    function getMin() {
+        var current = this.root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+    
+    function getMax() {
+        var  current = this.root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
+
+    function find(data) {
+        var  current = this.root;
+        while(current != null) {
+            if (current.data == data) {
+                return current;
+            } else if (data < current.data) {
+                current = current.left
+            } else {
+                current = current.right;
+            }
+        }
+        return null
+    }
 }
 
 var nums = new BST();
@@ -87,3 +120,9 @@ nums.insert(99);
 nums.insert(22);
 console.log("Preorder traversal:");
 nums.preOrder(nums.root);
+var min  = nums.getMin();
+console.log('min:');
+console.log(min);
+var max = nums.getMax();
+console.log('max');
+console.log(max);
