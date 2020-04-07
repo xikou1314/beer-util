@@ -19,6 +19,8 @@ function BST() {
     this.getMax = getMax;
     this.getMin = getMin;
     this.find = find;
+    this.removeByMin = removeByMin;
+    this.removeByMax = removeByMax;
     
     function insert(data) {
         var n = new Node(data, null, null);
@@ -108,6 +110,92 @@ function BST() {
         }
         return null
     }
+
+    function removeByMin(data) {
+        this.root = removeNodeByMin(this.root, data);
+    }
+
+    function removeNodeByMin(node, data) {
+        if (node == null) {
+            return null;
+        }
+        if (data == node.data) {
+            // 没有子节点的节点
+            if (node.left == null && node.right == null) {
+                return null;
+            }
+            // 没有左子节点的节点
+            if (node.left == null) {
+                return node.right;
+            }
+            // 没有右子节点的节点
+            if (node.right == null) {
+                return node.left;
+            }
+            // 有两个子节点的节点
+            var tempNode = getSmallet(node.right);
+            node.data = tempNode.data;
+            node.right = removeNode(node.right, tempNode.data);
+            return node;
+        } else if (data < node.data) {
+            node.left = removeNode(node.left, data);
+            return node;
+        } else {
+            node.right = removeNode(node.right, data);
+            return node;
+        }
+    }
+
+    function removeByMax(data) {
+        this.root = removeNodeByMax(this.root, data);
+    }
+
+    function removeNodeByMax(node, data) {
+        if(node == null) {
+            return null;
+        }
+
+        if(data == node.data) {
+            if (node.left == null && node.right == null) {
+                return null;
+            }
+
+            if (node.left == null) {
+                return node.right;
+            }
+
+            if (node.right == null) {
+                return node.left;
+            }
+
+            var tempNode = getMaximum(node, data);
+            node.data = tempNode.data;
+            node.left = removeNodeByMax(node.left, tempNode.data);
+            return node;
+        } else if (data < node.data) {
+            node.left = removeNodeByMax(node.left, data);
+            return node;
+        } else {
+            node.right = removeNodeByMax(node.right, data);
+            return node;
+        }
+    }
+
+    function getSmallet(node) {
+        var current = node;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+    
+    function getMaximum(node) {
+        var  current = node;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
 }
 
 var nums = new BST();
@@ -126,3 +214,7 @@ console.log(min);
 var max = nums.getMax();
 console.log('max');
 console.log(max);
+
+nums.removeByMax(22);
+console.log("Preorder traversal:");
+nums.preOrder(nums.root);
