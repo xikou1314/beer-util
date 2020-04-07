@@ -19,4 +19,17 @@ function Graph(v) {
     this.hasPathTo = hasPathTo;
     this.topSortHelper = topSortHelper;
     this.topSort = topSort;
+
+    function topSort() {
+        var stack = [];
+        var visited = [];
+        for (var i=0; i < this.vertices; i++) {
+            visited[i] = false;
+        }
+
+        for( var i=0; i<stack.length; i++) {
+            
+        }
+    }
+
 }
