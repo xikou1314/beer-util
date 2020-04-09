@@ -10,8 +10,9 @@ function CArray(numElements) {
     this.bubbleSort = bubbleSort;
     this.selectionSort = selectionSort;
     this.insertionSort = insertionSort;
-    this.gaps = [5,3,1];
+    this.gaps = [5, 3, 1];
     this.shellSort = shellSort;
+    this.shellSort1 = shellSort1;
 
     for (var i = 0; i < numElements; ++i) {
         this.dataStore[i] = i;
@@ -88,34 +89,47 @@ function CArray(numElements) {
     }
 
     function shellSort() {
-        for (var i=this.gaps[i]; i<this.dataStore.length; ++i) {
-            var temp = this.dataStore[i];
-            for (var j = i; j >= this.gaps[g] && this.dataStore[j - this.gaps[g]] > temp; j -= this.gaps[g]) {
-                this.dataStore[j] = this.dataStore[j - this.gaps[g]];
+        for (var g = 0; g < this.gaps.length; ++g) {
+            for (var i = this.gaps[g]; i < this.dataStore.length; ++i) {
+                var temp = this.dataStore[i];
+                for (var j = i; j >= this.gaps[g] &&
+                    this.dataStore[j - this.gaps[g]] > temp;
+                    j -= this.gaps[g]) {
+                    this.dataStore[j] = this.dataStore[j - this.gaps[g]];
+                }
+                this.dataStore[j] = temp;
             }
-            this.dataStore[j] = temp;
+        }
+    }
+    // 动态间隔
+    function shellSort1() {
+        var N = this.dataStore.length;
+        var h = 1;
+        while(h < N/3) {
+            h = 3 * h + 1;
+        }
+        while (h>=1) {
+            for (var i=h; i < N; i++) {
+                for (var j=i; j >= h && this.dataStore[j] < this.dataStore[j-h]; j-=h) {
+                    swap(this.dataStore, j, j-h);
+                }
+            }
+            h = (h-1)/3;
         }
     }
 }
 
-var numElements = 100000;
-var nums = new CArray(numElements);
+var nums = new CArray(100000000);
+// nums.setData();
+// var start = new Date().getTime();
+// nums.shellSort();
+// var stop = new Date().getTime();
+// var elapsed = stop - start;
+// console.log(" 硬编码间隔序列的希尔排序消耗的时间为：" + elapsed + " 毫秒。");
+// nums.clear();
 nums.setData();
-var start = new Date().getTime();
-nums.bubbleSort();
-var stop = new Date().getTime();
-var elapsed = stop - start;
-console.log(" 对 " + numElements + " 个元素执行冒泡排序消耗的时间为：" +
-    elapsed + " 毫秒。");
 start = new Date().getTime();
-nums.selectionSort();
+nums.shellSort1();
 stop = new Date().getTime();
-elapsed = stop - start;
-console.log(" 对 " + numElements + " 个元素执行选择排序消耗的时间为：" +
-    elapsed + " 毫秒。");
-start = new Date().getTime();
-nums.insertionSort();
-stop = new Date().getTime();
-elapsed = stop - start;
-console.log(" 对 " + numElements + " 个元素执行插入排序消耗的时间为：" +
-    elapsed + " 毫秒。");
+elapsed = stop - start
+console.log(" 动态间隔序列的希尔排序消耗的时间为：" + elapsed + " 毫秒。");
