@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ds/circleLinkedList.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">ds</a> circleLinkedList.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// 循环链表
+function <span class="fstat-no" title="function not covered" >CNode(element) {</span>
+<span class="cstat-no" title="statement not covered" >    this.element = element;</span>
+<span class="cstat-no" title="statement not covered" >    this.next = null;</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >CLList() {</span>
+<span class="cstat-no" title="statement not covered" >    this.head = new Node("head");</span>
+<span class="cstat-no" title="statement not covered" >    this.head.next = this.head;</span>
+<span class="cstat-no" title="statement not covered" >    this.find = find;</span>
+<span class="cstat-no" title="statement not covered" >    this.insert = insert;</span>
+<span class="cstat-no" title="statement not covered" >    this.remove = remove;</span>
+<span class="cstat-no" title="statement not covered" >    this.display = display;</span>
+<span class="cstat-no" title="statement not covered" >    this.findPrevious = findPrevious;</span>
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >find(item) {</span>
+        var currNode = <span class="cstat-no" title="statement not covered" >this.head;</span>
+<span class="cstat-no" title="statement not covered" >        while (currNode.element != item) {</span>
+<span class="cstat-no" title="statement not covered" >            currNode = currNode.next;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return currNode;</span>
+    }
+    function <span class="fstat-no" title="function not covered" >insert(newElement, item) {</span>
+        var newNode = <span class="cstat-no" title="statement not covered" >new Node(newElement);</span>
+        var current = <span class="cstat-no" title="statement not covered" >this.find(item);</span>
+<span class="cstat-no" title="statement not covered" >        newNode.next = current.next;</span>
+<span class="cstat-no" title="statement not covered" >        current.next = newNode;</span>
+    }
+    function <span class="fstat-no" title="function not covered" >display() {</span>
+        var currNode = <span class="cstat-no" title="statement not covered" >this.head;</span>
+<span class="cstat-no" title="statement not covered" >        while(currNode.next != null &amp;&amp; currNode.next.element != "head") {</span>
+<span class="cstat-no" title="statement not covered" >            console.log(currNode.next.element);</span>
+<span class="cstat-no" title="statement not covered" >            currNode = currNode.next;</span>
+        }
+    }
+    function <span class="fstat-no" title="function not covered" >findPrevious(item) {</span>
+        var currNode = <span class="cstat-no" title="statement not covered" >this.head;</span>
+<span class="cstat-no" title="statement not covered" >        while ((currNode.next != null) &amp;&amp; (currNode.next.element != item)) {</span>
+<span class="cstat-no" title="statement not covered" >            currNode = currNode.next;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return currNode;</span>
+    }
+    function <span class="fstat-no" title="function not covered" >remove(item) {</span>
+        var prevNode = <span class="cstat-no" title="statement not covered" >this.findPrevious(item);</span>
+<span class="cstat-no" title="statement not covered" >        if(pervNode.next != null) {</span>
+<span class="cstat-no" title="statement not covered" >            pervNode.next = prevNode.next.next;</span>
+        }
+    }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = {</span>
+    CNode,
+    CLList
+};</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 11 2020 18:34:13 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

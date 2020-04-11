@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for adapter/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">adapter</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.09% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/15</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+/**
+ * 限定参数个数
+ *
+ * const firstTwoMax = ary(Math.max,2)
+ * [[2,6,'a'], [8,4,6], [10]].map(x =&gt; firstTwoMax(...x)); // [6, 8, 10]
+ * 
+ * 
+ * @param {*} fn
+ * @param {*} n
+ */
+const ary = (fn, n) =&gt; (...args) =&gt; fn(...args.slice(0, n));
+&nbsp;
+/**
+ * 延缓执行
+ *
+ * Promise.resolve([1,2,3]).then(call('map', x =&gt; 2 * x))
+ * .then(console.log); // [2,4,6]
+ * 
+ * const map = call.bind(null, 'map')
+ * Promise.resolve([1,2,3]).then(map(x =&gt; 2 * x)).then(console.log); // [2,4,6]
+ * 
+ * @param {*} key
+ * @param {*} args
+ */
+const call = <span class="fstat-no" title="function not covered" >(k</span>ey, ...args) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >co</span>ntext =&gt; <span class="cstat-no" title="statement not covered" >context[key](...args);</span></span>
+&nbsp;
+/**
+ * 收集信息
+ * 
+ * const Pall = collectInfo(Promise.all.bind(Promise))
+ * let p1 = Promise.resolve(1);
+ * let p2 = Promise.resolve(2);
+ * let p3 = new Promise(resolve =&gt; setTimeout(resolve, 2000, 3));
+ * Pall(p1, p2, p3).then(console.log); // [1, 2, 3] (after about 2 seconds)
+ *
+ * @param {*} fn
+ */
+const collectInfo = <span class="fstat-no" title="function not covered" >fn</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(.</span>..args) =&gt; <span class="cstat-no" title="statement not covered" >fn(args);</span></span>
+&nbsp;
+/**
+ * 将第一个参数放到最后
+ *
+ * let a = { name: 'John Smith'}
+ * let b = {}
+ * const mergeFrom = flip(Object.assign);
+ * let mergePerson = mergeFrom.bind(null, a);
+ * mergePerson(b); // == b
+ * b = {};
+ * Object.assign(b,a)
+ * 
+ * 
+ * @param {*} fn
+ */
+const flip = <span class="fstat-no" title="function not covered" >fn</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(f</span>irst, ...rest) =&gt; <span class="cstat-no" title="statement not covered" >fn(...rest, first);</span></span>
+&nbsp;
+/**
+ * 使用同一个参数执行多个函数
+ * 
+ * const minMax = over(Math.min,Math.max);
+ * minMax(1, 2, 3, 4, 5);
+ *
+ * @param {*} fns
+ */
+const over = <span class="fstat-no" title="function not covered" >(.</span>..fns) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(.</span>..args) =&gt; <span class="cstat-no" title="statement not covered" >fns.map(<span class="fstat-no" title="function not covered" >fn</span> =&gt; <span class="cstat-no" title="statement not covered" >fn.apply(null, args))</span>;</span></span>
+&nbsp;
+/**
+ * 对参数transform后调用fn
+ *
+ * const square = n =&gt; n * n;
+ * const double = n =&gt; n * 2;
+ * 
+ * @param {*} fn
+ * @param {*} transforms
+ */
+const overArgs = <span class="fstat-no" title="function not covered" >(f</span>n, transforms) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(.</span>..args) =&gt; <span class="cstat-no" title="statement not covered" >fn(...args.map(<span class="fstat-no" title="function not covered" >(v</span>al, i) =&gt; <span class="cstat-no" title="statement not covered" >transforms[i](val))</span>);</span></span>
+&nbsp;
+/**
+ * 顺序执行异步函数
+ *
+ * const sum = pipeAsyncFunctions(
+ *  x =&gt; x + 1,
+ *  x =&gt; new Promise(resolve =&gt; setTimeout(() =&gt; resolve(x + 2), 1000)),
+ *  x =&gt; x + 3,
+ *  async x =&gt; (await x) + 4
+ * );
+ * (async () =&gt; {
+ *   console.log(await sum(5));  // 15 (after one second)
+ * })
+ * 
+ * 
+ * @param {*} fns
+ */
+const pipeAsyncFunctions = <span class="fstat-no" title="function not covered" >(.</span>..fns) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ar</span>g =&gt; <span class="cstat-no" title="statement not covered" >fns.reduce( <span class="fstat-no" title="function not covered" >(p</span>, f) =&gt; <span class="cstat-no" title="statement not covered" >p.then(f),</span> Promise.resolve(arg));</span></span>
+&nbsp;
+/**
+ * 顺序执行函数
+ *
+ * const add5 = x =&gt; x + 5;
+ * const multiply = (x, y) =&gt; x * y;
+ * const multiplyAndAdd5 = pipeFunctions(multiply, add5);
+ * multiplyAndAdd5(2, 5);
+ * 
+ * @param {*} fns
+ */
+const pipeFunctions = <span class="fstat-no" title="function not covered" >(.</span>..fns) =&gt; <span class="cstat-no" title="statement not covered" >fns.reduce(<span class="fstat-no" title="function not covered" >(f</span>, g) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(.</span>..args) =&gt; <span class="cstat-no" title="statement not covered" >g(f(...args)))</span></span>;</span>
+&nbsp;
+/**
+ * 将普通函数转化为promies对象
+ *
+ * const delay = promisify((d, cb) =&gt; setTimeout(cb, d));
+ * delay(2000).then(()=&gt; console.log('Hi')); // Promies resolve after 2 seconds
+ * 
+ * @param {*} func
+ */
+const promisify = <span class="fstat-no" title="function not covered" >fu</span>nc =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(.</span>..args) =&gt; </span>
+<span class="cstat-no" title="statement not covered" >  new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; </span>
+<span class="cstat-no" title="statement not covered" >    func(...args, <span class="fstat-no" title="function not covered" >(e</span>rr, result) =&gt; (<span class="cstat-no" title="statement not covered" >err ? reject(err) : resolve(result))</span>)</span>
+  );
+&nbsp;
+/**
+ * 函数参数排序
+ * 
+ * var rearged = rearg(
+ *  function(a, b, c) {
+ *    return [a, b, c];
+ *  },
+ *  [2, 0, 1]
+ * );
+ * 
+ * rearged('b', 'c', 'a'); // ['a', 'b', 'c']
+ *
+ *
+ * @param {*} fn
+ * @param {*} indexes
+ */
+const rearg = <span class="fstat-no" title="function not covered" >(f</span>n, indexes) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(.</span>..args) =&gt; <span class="cstat-no" title="statement not covered" >fn(...indexes.map(<span class="fstat-no" title="function not covered" >i </span>=&gt; <span class="cstat-no" title="statement not covered" >args[i])</span>);</span></span>
+&nbsp;
+/**
+ * 数组参数拆散
+ *
+ * const arrayMax = spreadOver(Math.max);
+ * arrayMax([1, 2, 3]);
+ *
+ * @param {*} fn
+ */
+const spreadOver = <span class="fstat-no" title="function not covered" >fn</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ar</span>gsArr =&gt; <span class="cstat-no" title="statement not covered" >fn(...argsArr);</span></span>
+&nbsp;
+/**
+ * 创建接收一个参数的函数
+ *
+ * ['6', '8', '10'].map(unary(parseInt)); // [6, 8 ,10]
+ * 
+ * @param {*} fn
+ */
+const unary = <span class="fstat-no" title="function not covered" >fn</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >va</span>l =&gt; <span class="cstat-no" title="statement not covered" >fn(val);</span></span>
+&nbsp;
+module.exports = {
+  ary,
+  call,
+  collectInfo,
+  flip,
+  over,
+  overArgs,
+  pipeAsyncFunctions,
+  pipeFunctions,
+  promisify,
+  rearg,
+  spreadOver,
+  unary
+};</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Nov 20 2018 10:33:18 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

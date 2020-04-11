@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for temp/16.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">temp</a> 16.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function <span class="fstat-no" title="function not covered" >CArray(numElements) {</span>
+<span class="cstat-no" title="statement not covered" >    this.dataStore = [];</span>
+<span class="cstat-no" title="statement not covered" >    this.pos = 0;</span>
+<span class="cstat-no" title="statement not covered" >    this.numElements = numElements;</span>
+<span class="cstat-no" title="statement not covered" >    this.insert = insert;</span>
+<span class="cstat-no" title="statement not covered" >    this.toString = toString;</span>
+<span class="cstat-no" title="statement not covered" >    this.clear = clear;</span>
+<span class="cstat-no" title="statement not covered" >    this.setData = setData;</span>
+<span class="cstat-no" title="statement not covered" >    this.swap = swap;</span>
+<span class="cstat-no" title="statement not covered" >    this.bubbleSort = bubbleSort;</span>
+<span class="cstat-no" title="statement not covered" >    this.selectionSort = selectionSort;</span>
+<span class="cstat-no" title="statement not covered" >    this.insertionSort = insertionSort;</span>
+<span class="cstat-no" title="statement not covered" >    this.gaps = [5,3,1];</span>
+<span class="cstat-no" title="statement not covered" >    this.shellSort = shellSort;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; numElements; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >        this.dataStore[i] = i;</span>
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >setData() {</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; this.numElements; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >            this.dataStore[i] = Math.floor(Math.random() * (this.numElements + 1));</span>
+        }
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >clear() {</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; this.dataStore.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >            this.dataStore[i] = 0;</span>
+        }
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >insert(element) {</span>
+<span class="cstat-no" title="statement not covered" >        this.dataStore[this.pos++] = element;</span>
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >toString() {</span>
+        var retstr = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; this.dataStore.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >            retstr += this.dataStore[i] + " ";</span>
+<span class="cstat-no" title="statement not covered" >            if (i &gt; 0 &amp;&amp; i % 10 == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                retstr += '\n';</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return retstr;</span>
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >swap(arr, index1, index2) {</span>
+        var temp = <span class="cstat-no" title="statement not covered" >arr[index1];</span>
+<span class="cstat-no" title="statement not covered" >        arr[index1] = arr[index2];</span>
+<span class="cstat-no" title="statement not covered" >        arr[index2] = temp;</span>
+    }
+    // 冒泡排序
+    function <span class="fstat-no" title="function not covered" >bubbleSort() {</span>
+        var numElements = <span class="cstat-no" title="statement not covered" >this.dataStore.length;</span>
+<span class="cstat-no" title="statement not covered" >        for (var outer = numElements; outer &gt;= 2; --outer) {</span>
+<span class="cstat-no" title="statement not covered" >            for (var inner = 0; inner &lt;= outer - 1; ++inner) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.dataStore[inner] &gt; this.dataStore[inner + 1]) {</span>
+<span class="cstat-no" title="statement not covered" >                    swap(this.dataStore, inner, inner + 1);</span>
+                }
+            }
+        }
+    }
+    // 选择排序
+    function <span class="fstat-no" title="function not covered" >selectionSort() {</span>
+        var min;
+<span class="cstat-no" title="statement not covered" >        for (var outer = 0; outer &lt;= this.dataStore.length - 2; ++outer) {</span>
+<span class="cstat-no" title="statement not covered" >            min = outer;</span>
+<span class="cstat-no" title="statement not covered" >            for (var inner = outer + 1; inner &lt;= this.dataStore.length - 1; ++inner) {</span>
+<span class="cstat-no" title="statement not covered" >                if (this.dataStore[inner] &lt; this.dataStore[min]) {</span>
+<span class="cstat-no" title="statement not covered" >                    min = inner;</span>
+                }
+            }
+<span class="cstat-no" title="statement not covered" >            swap(this.dataStore, outer, min);</span>
+        }
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >insertionSort() {</span>
+        var temp, inner;
+<span class="cstat-no" title="statement not covered" >        for (var outer = 1; outer &lt;= this.dataStore.length - 1; ++outer) {</span>
+<span class="cstat-no" title="statement not covered" >            temp = this.dataStore[outer];</span>
+<span class="cstat-no" title="statement not covered" >            inner = outer;</span>
+<span class="cstat-no" title="statement not covered" >            while (inner &gt; 0 &amp;&amp; (this.dataStore[inner - 1] &gt;= temp)) {</span>
+<span class="cstat-no" title="statement not covered" >                this.dataStore[inner] = this.dataStore[inner - 1];</span>
+<span class="cstat-no" title="statement not covered" >                --inner;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            this.dataStore[inner] = temp;</span>
+        }
+    }
+&nbsp;
+    function <span class="fstat-no" title="function not covered" >shellSort() {</span>
+<span class="cstat-no" title="statement not covered" >        for (var i=this.gaps[i]; i&lt;this.dataStore.length; ++i) {</span>
+            var temp = <span class="cstat-no" title="statement not covered" >this.dataStore[i];</span>
+<span class="cstat-no" title="statement not covered" >            for (var j = i; j &gt;= this.gaps[g] &amp;&amp; this.dataStore[j - this.gaps[g]] &gt; temp; j -= this.gaps[g]) {</span>
+<span class="cstat-no" title="statement not covered" >                this.dataStore[j] = this.dataStore[j - this.gaps[g]];</span>
+            }
+<span class="cstat-no" title="statement not covered" >            this.dataStore[j] = temp;</span>
+        }
+    }
+}
+&nbsp;
+var numElements = <span class="cstat-no" title="statement not covered" >100000;</span>
+var nums = <span class="cstat-no" title="statement not covered" >new CArray(numElements);</span>
+<span class="cstat-no" title="statement not covered" >nums.setData();</span>
+var start = <span class="cstat-no" title="statement not covered" >new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >nums.bubbleSort();</span>
+var stop = <span class="cstat-no" title="statement not covered" >new Date().getTime();</span>
+var elapsed = <span class="cstat-no" title="statement not covered" >stop - start;</span>
+<span class="cstat-no" title="statement not covered" >console.log(" 对 " + numElements + " 个元素执行冒泡排序消耗的时间为：" +</span>
+    elapsed + " 毫秒。");
+<span class="cstat-no" title="statement not covered" >start = new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >nums.selectionSort();</span>
+<span class="cstat-no" title="statement not covered" >stop = new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >elapsed = stop - start;</span>
+<span class="cstat-no" title="statement not covered" >console.log(" 对 " + numElements + " 个元素执行选择排序消耗的时间为：" +</span>
+    elapsed + " 毫秒。");
+<span class="cstat-no" title="statement not covered" >start = new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >nums.insertionSort();</span>
+<span class="cstat-no" title="statement not covered" >stop = new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >elapsed = stop - start;</span>
+<span class="cstat-no" title="statement not covered" >console.log(" 对 " + numElements + " 个元素执行插入排序消耗的时间为：" +</span>
+    elapsed + " 毫秒。");</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 11 2020 10:09:16 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
