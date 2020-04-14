@@ -26,11 +26,13 @@ function LList() {
         current.next = newNode;
     }
     function display() {
+        var result = [];
         var currNode = this.head;
         while(!(currNode.next == null)) {
-            console.log(currNode.next.element);
+            result.push(currNode.next.element);
             currNode = currNode.next;
         }
+        return result;
     }
     function findPrevious(item) {
         var currNode = this.head;
@@ -41,9 +43,11 @@ function LList() {
     }
     function remove(item) {
         var prevNode = this.findPrevious(item);
-        if(pervNode.next != null) {
-            pervNode.next = prevNode.next.next;
+        if(prevNode.next != null) {
+            prevNode.next = prevNode.next.next;
+            return true;
         }
+        return false;
     }
 }
 

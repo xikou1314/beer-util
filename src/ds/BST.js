@@ -56,28 +56,44 @@ function BST() {
             }
         }
     }
-
+    // 中序遍历
     function inOrder(node) {
-        if(!(node == null)) {
-            inOrder(node.left);
-            console.log(node.show() + " ");
-            inOrder(node.right);
+        var result = []
+        inOrderFn(node, result);
+        return result;
+    }
+    function inOrderFn(node, data) {
+        if(node != null) {
+            inOrderFn(node.left, data);
+            data.push(node.show());
+            inOrderFn(node.right, data);
         }
+    }
+    // 先序遍历
+    function preOrder(node) {
+        var result = []
+        preOrderFn(node, result);
+        return result;
+    }
+    function preOrderFn(node, data) {
+        if(node !=null) {
+            data.push(node.show());
+            preOrderFn(node.left, data);
+            preOrderFn(node.right, data);
+        }
+    }
+    // 后序遍历
+    function postOrder (node) {
+        var result = [];
+        postOrderFn(node, result);
+        return result;
     }
 
-    function preOrder(node) {
-        if(node !=null) {
-            console.log(node.show() + " ");
-            preOrder(node.left);
-            preOrder(node.right);
-        }
-    }
-    
-    function postOrder (node) {
+    function postOrderFn (node, data) {
         if(node != null) {
-            postOrder(node.left);
-            postOrder(node.right);
-            console.log(node.show() + " ");
+            postOrderFn(node.left, data);
+            postOrderFn(node.right, data);
+            data.push(node.show());
         }
     }
 
@@ -133,15 +149,15 @@ function BST() {
                 return node.left;
             }
             // 有两个子节点的节点
-            var tempNode = getSmallet(node.right);
+            var tempNode = getMin(node.right);
             node.data = tempNode.data;
-            node.right = removeNode(node.right, tempNode.data);
+            node.right = removeNodeByMin(node.right, tempNode.data);
             return node;
         } else if (data < node.data) {
-            node.left = removeNode(node.left, data);
+            node.left = removeNodeByMin(node.left, data);
             return node;
         } else {
-            node.right = removeNode(node.right, data);
+            node.right = removeNodeByMin(node.right, data);
             return node;
         }
     }
@@ -168,7 +184,7 @@ function BST() {
                 return node.left;
             }
 
-            var tempNode = getMaximum(node, data);
+            var tempNode = getMax(node, data);
             node.data = tempNode.data;
             node.left = removeNodeByMax(node.left, tempNode.data);
             return node;
@@ -181,21 +197,6 @@ function BST() {
         }
     }
 
-    function getSmallet(node) {
-        var current = node;
-        while (current.left != null) {
-            current = current.left;
-        }
-        return current.data;
-    }
-    
-    function getMaximum(node) {
-        var  current = node;
-        while (current.right != null) {
-            current = current.right;
-        }
-        return current.data;
-    }
 }
 
 module.exports = {

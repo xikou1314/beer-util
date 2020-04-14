@@ -1,11 +1,11 @@
 /**
- * 函数节流
+ * 函数防抖
  *
  * @param {*} fn
  * @param {*} delay
  * @returns
  */
-const throttle = (fn, delay) => {
+const debounce = (fn, delay) => {
   var lastTime = 0;
   return function() {
     var nowTime = Date.now();
@@ -17,13 +17,13 @@ const throttle = (fn, delay) => {
 };
 
 /**
- * 函数防抖
+ * 函数节流
  *
  * @param {*} fn
  * @param {*} delay
  * @returns
  */
-const debounce = (fn, delay) => {
+const throttle = (fn, delay) => {
   var timer = null;
   return function() {
     clearTimeout(timer);

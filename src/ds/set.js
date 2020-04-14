@@ -40,7 +40,7 @@ function Set() {
             return false;
         }
     }
-
+    // 并集
     function union(set) {
         var tempSet = new Set();
         for (var i=0; i < this.dataStore.length; ++i) {
@@ -53,7 +53,7 @@ function Set() {
         }
         return tempSet;
     }
-
+    // 交集
     function intersect(set) {
         var tempSet = new Set();
         for (var i=0; i < this.dataStore.length; ++i) {
@@ -64,6 +64,7 @@ function Set() {
         return tempSet;
     }
 
+    // 判断是否是子集
     function subset(set) {
         if(this.size() > set.size()) {
             return false;
@@ -80,7 +81,7 @@ function Set() {
     function size() {
         return this.dataStore.length;
     }
-
+    // 补集
     function difference(set) {
         var tempSet = new Set();
         for (var i=0; i<this.dataStore.length; ++i) {

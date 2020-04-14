@@ -3,12 +3,12 @@
 <head>
     <title>Code coverage report for ds/queue.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(..\sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,12 +16,12 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">ds</a> queue.js
+      <a href="..\index.html">All files</a> / <a href="index.html">ds</a> queue.js
     </h1>
     <div class='clearfix'>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -71,94 +71,94 @@
 46
 47</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// 队列
-function <span class="fstat-no" title="function not covered" >Queue() {</span>
-<span class="cstat-no" title="statement not covered" >    this.dataStore = [];</span>
-<span class="cstat-no" title="statement not covered" >    this.enqueue = enqueue;</span>
-<span class="cstat-no" title="statement not covered" >    this.dequeue = dequeue;</span>
-<span class="cstat-no" title="statement not covered" >    this.front = front;</span>
-<span class="cstat-no" title="statement not covered" >    this.back = back;</span>
-<span class="cstat-no" title="statement not covered" >    this.toString = toString;</span>
-<span class="cstat-no" title="statement not covered" >    this.empty = empty;</span>
+function Queue() {
+    this.dataStore = [];
+    this.enqueue = enqueue;
+    this.dequeue = dequeue;
+    this.front = front;
+    this.back = back;
+    this.toString = toString;
+    this.empty = empty;
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >enqueue(element) {</span>
-<span class="cstat-no" title="statement not covered" >        this.dataStore.push(element);</span>
+    function enqueue(element) {
+        this.dataStore.push(element);
     }
 &nbsp;
-    function  <span class="fstat-no" title="function not covered" >dequeue() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.dataStore.shift();</span>
+    function  dequeue() {
+        return this.dataStore.shift();
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >front() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.dataStore[0];</span>
+    function front() {
+        return this.dataStore[0];
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >back() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.dataStore[this.dataStore.length - 1];</span>
+    function back() {
+        return this.dataStore[this.dataStore.length - 1];
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >toString() {</span>
-        var retStr = <span class="cstat-no" title="statement not covered" >"";</span>
-<span class="cstat-no" title="statement not covered" >        for (var i=0; i &lt; this.dataStore.length; ++i) {</span>
-<span class="cstat-no" title="statement not covered" >            retStr += this.dataStore[i] + "\n";</span>
+    function toString() {
+        var retStr = "";
+        for (var i=0; i &lt; this.dataStore.length; ++i) {
+            retStr += this.dataStore[i] + "\n";
         }
-<span class="cstat-no" title="statement not covered" >        return retStr;</span>
+        return retStr;
     }
 &nbsp;
-    function <span class="fstat-no" title="function not covered" >empty() {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.dataStore.length == 0) {</span>
-<span class="cstat-no" title="statement not covered" >            return true;</span>
+    function empty() {
+        if (this.dataStore.length == 0) {
+            return true;
         } else {
-<span class="cstat-no" title="statement not covered" >            return false;</span>
+            return false;
         }
     }    
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >module.exports = {</span>
+module.exports = {
 	Queue
 };
 &nbsp;</pre></td></tr>
@@ -167,10 +167,10 @@ function <span class="fstat-no" title="function not covered" >Queue() {</span>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 11 2020 18:34:13 GMT+0800 (CST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 14 2020 18:00:13 GMT+0800 (中国标准时间)
 </div>
 </div>
-<script src="../prettify.js"></script>
+<script src="..\prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -178,6 +178,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../sorter.js"></script>
+<script src="..\sorter.js"></script>
 </body>
 </html>
