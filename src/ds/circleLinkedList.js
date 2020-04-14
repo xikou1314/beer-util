@@ -5,7 +5,7 @@ function CNode(element) {
 }
 
 function CLList() {
-    this.head = new Node("head");
+    this.head = new CNode("head");
     this.head.next = this.head;
     this.find = find;
     this.insert = insert;
@@ -21,17 +21,19 @@ function CLList() {
         return currNode;
     }
     function insert(newElement, item) {
-        var newNode = new Node(newElement);
+        var newNode = new CNode(newElement);
         var current = this.find(item);
         newNode.next = current.next;
         current.next = newNode;
     }
     function display() {
+        var result = [];
         var currNode = this.head;
         while(currNode.next != null && currNode.next.element != "head") {
-            console.log(currNode.next.element);
+            result.push(currNode.next.element);
             currNode = currNode.next;
         }
+        return result;
     }
     function findPrevious(item) {
         var currNode = this.head;
@@ -42,9 +44,11 @@ function CLList() {
     }
     function remove(item) {
         var prevNode = this.findPrevious(item);
-        if(pervNode.next != null) {
-            pervNode.next = prevNode.next.next;
+        if(prevNode.next != null) {
+            prevNode.next = prevNode.next.next;
+            return true;
         }
+        return false;
     }
 }
 

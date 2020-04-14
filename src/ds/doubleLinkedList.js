@@ -6,7 +6,7 @@ function DNode(element) {
 }
 
 function DLList() {
-    this.head = new Node("head");
+    this.head = new DNode("head");
     this.find = find;
     this.insert = insert;
     this.display = display;
@@ -15,12 +15,14 @@ function DLList() {
     this.dispReverse = dispReverse;
 
     function dispReverse() {
+        var result = [];
         var currNode = this.head;
         currNode = this.findLast();
         while(currNode.previous != null) {
-            console.log(currNode.element);
+            result.push(currNode.element);
             currNode = currNode.previous;
         }
+        return result;
     }
 
     function findLast() {
@@ -38,15 +40,23 @@ function DLList() {
             currNode.next.previous = currNode.previous;
             currNode.next = null;
             currNode.previous = null;
+            return true;
+        } else {
+            currNode.previous.next = null;
+            currNode.previous = null;
+            return true;
         }
+        return false;
     }
 
     function display() {
+        var result = [];
         var currNode = this.head;
         while(currNode.next != null) {
-            console.log(currNode.next.element);
+            result.push(currNode.next.element);
             currNode = currNode.next;
         }
+        return result;
     }
 
     function find(item) {
@@ -58,7 +68,7 @@ function DLList() {
     }
 
     function insert(newElement, item) {
-        var newNode = new Node(newElement);
+        var newNode = new DNode(newElement);
         var current = this.find(item);
         newNode.next = current.next;
         newNode.previous = current;
