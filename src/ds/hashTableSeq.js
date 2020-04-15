@@ -9,8 +9,6 @@ function HashTableSeq() {
     this.showDistro = showDistro;
     this.put = put;
     this.get = get;
-    this.buildChains = buildChains;
-
     this.values = [];
 
 	function simpleHash(data) {
@@ -18,10 +16,9 @@ function HashTableSeq() {
 		for(var i = 0; i < data.length; i++) {
 			total += data.charCodeAt(i);
 		}
-		console.log("========");
-		console.log("Hash Value: " +data+ " -> " +total);
 		return total % this.table.length;
-	}
+    }
+    
 	function put (key,data) {
 		var pos = this.betterHash(key);
 		if(this.table[pos] == undefined) {
@@ -34,7 +31,6 @@ function HashTableSeq() {
             this.table[pos] = key;
             this.values[pos] = data;
         }
-
     }
     
 	function get(key) {
@@ -48,20 +44,18 @@ function HashTableSeq() {
             }
         }
         return undefined;
-	}
-	function showDistro(){
-		for(var i = 0; i < this.table.length; i++) {
-			if(this.table[i][0] != undefined) {
-				console.log("=======")
-				console.log(i + ":" +this.table[i]);
-			}
-		}
     }
-    function buildChains() {
+    
+	function showDistro(){
+        var result = [];
 		for(var i = 0; i < this.table.length; i++) {
-			this.table[i] = new Array();
-		}
-	}
+			if(this.table[i] != undefined) {
+				result.push(this.values[i]);
+			}
+        }
+        return result;
+    }
+
     function betterHash(string) {
         const H = 37;
         var total = 0;
@@ -74,7 +68,7 @@ function HashTableSeq() {
         }
         return parseInt(total);
     }
-
+    
 }
 
 module.exports = {

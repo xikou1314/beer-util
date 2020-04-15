@@ -21,10 +21,13 @@ function Dictionary () {
     }
 
     function showAll() {
+        var result = []
         for(var key of Object.keys(this.datastore).sort()) {
-            console.log(key + '->' + this.datastore[key]);
+            result.push(this.datastore[key]);
         }
+        return result;
     }
+
     function count() {
         var n = 0;
         for( var key in Object.keys(this.datastore) ) {
@@ -32,6 +35,7 @@ function Dictionary () {
         }
         return n;
     }
+
     function clear() {
         for (var key of Object.keys(this.datastore)) {
             delete this.datastore[key];

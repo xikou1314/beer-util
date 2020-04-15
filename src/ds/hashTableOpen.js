@@ -8,7 +8,10 @@ function HashTableOpen() {
 	this.showDistro = showDistro;
 	this.put = put;
 	this.get = get;
-	this.buildChains = buildChains;
+
+	for (var i = 0; i < this.table.length; i++) {
+		this.table[i] = new Array();
+	}
 
 	function simpleHash(data) {
 		var total = 0;
@@ -51,19 +54,16 @@ function HashTableOpen() {
 	}
 
 	function showDistro() {
+		var result = [];
 		for (var i = 0; i < this.table.length; i++) {
 			if (this.table[i][0] != undefined) {
-				console.log("=======")
-				console.log(i + ":" + this.table[i]);
+				result.push(this.table[i]);
 			}
 		}
+		return result;
 	}
 
-	function buildChains() {
-		for (var i = 0; i < this.table.length; i++) {
-			this.table[i] = new Array();
-		}
-	}
+
 
 	function betterHash(string) {
 		const H = 37;

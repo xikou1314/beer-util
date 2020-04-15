@@ -7,13 +7,10 @@ function Graph(v) {
     for (var i=0; i<this.vertices; ++i) {
         this.adj[i] = [];
     }
+    this.marked = [];
     this.addEdge = addEdge;
     this.showGraph = showGraph;
     this.dfs = dfs;
-    this.marked = [];
-    for (var i=0; i<this.vertices; ++i) {
-        this.marked[i] = false;
-    }
     this.bfs = bfs;
     this.edgeTo = [];
     this.hasPathTo = hasPathTo;
@@ -22,68 +19,38 @@ function Graph(v) {
     this.initMarked = initMarked;
     this.pathTo = pathTo;
 
-    function topSort() {
-        var stack = [];
-        var visited = [];
-        for (var i = 0; i < this.vertices; i++) {
-            visited[i] = false;
-        }
-        for (var i = 0; i < this.vertices; i++) {
-            if (visited[i] == false) {
-                this.topSortHelper(i, visited, stack);
-            }
-        }
-        for (var i = 0; i < stack.length; i++) {
-            if (stack[i] != undefined && visited[i] != false) {
-                console.log(this.vertexList[stack[i]]);
-            }
-        }
-
-    }
-
-
-    function topSortHelper(v, visited, stack) {
-        visited[v] = true;
-        for (var w of this.adj[v]) {
-            if (!visited[w]) {
-                this.topSortHelper(visited[w], visited, stack);
-            }
-        }
-        stack.push(v);
-    }
-
     function addEdge(v,w) {
-        this.adj[v].push[w];
-        this.adj[w].push[v];
+        this.adj[v].push(w);
+        this.adj[w].push(v);
         this.edges++;
     }
-    // 用于显示符合名字而非数字的新函数
+
     function showGraph() {
-        var visited = [];
+        var result = [];
         for (var i=0; i < this.vertices; ++i) {
-            console.log(this.vertexList[i] + "->");
-            visited.push(this.vertexList[i]);
-            for (var j=0; j < this.vertices; ++j) {
-                if (this.adj[i][j] != undefined) {
-                    if (visited.indexOf(this.vertices[j]) < 0) {
-                        console.log(this.vertices[j] + ' ');
-                    }
-                }
+            for (var j=0; j < this.adj[i].length; ++j) {
+                if(result.indexOf(this.vertexList[this.adj[i][j]]) < 0) {
+                    result.push(this.vertexList[this.adj[i][j]]);
+                }               
             }
-            visited.pop();
         }
+        return result;
     }
 
     // 深度优先搜索
     function dfs(v) {
-        this.marked[v] = true;
-        // 用于输出的if语句在这里不是必须的
-        if(this.adj[v] != undefined) {
-            console.log("Visited vertex:" + v);
-            for(var w of this.adj[v]) {
-                if (!this.marked[w]) {
-                    this.dfs(w);
-                }
+        this.initMarked();
+        var result = [];
+        dfsFn(v,this.adj,this.marked,result,this.vertexList);
+        return result;
+    }
+
+    function dfsFn(v,data,marked,result,source) {
+        marked[v] = true;
+        result.push(source[v]);
+        for(var w of data[v]) {
+            if (!marked[w]) {
+                dfsFn(w,data,marked,result,source);
             }
         }
     }
@@ -94,8 +61,10 @@ function Graph(v) {
             this.marked[i] = false;
         }
     }
+
     // 广度优先搜索
     function bfs(s) {
+        var result = [];
         this.initMarked();
         var queue = []; // 队列
         this.marked[s] = true;
@@ -103,16 +72,17 @@ function Graph(v) {
         while (queue.length > 0) {
             var v = queue.shift(); // 从队首移除;
             if (v != undefined) {
-                console.log("Visited vertex:" + v);
+                result.push(this.vertexList[v]);
             }
             for (var w of this.adj[v]) {
-                if (!this.marked[w]) {
-                    this.edgeTo[w] = v;
+                if (w && !this.marked[w]) {
+                    // this.edgeTo[w] = v;
                     this.marked[w] = true;
                     queue.push(w);
                 }
             }
         }
+        return result;
     }
 
     function pathTo(v) {
@@ -132,9 +102,49 @@ function Graph(v) {
     function hasPathTo(v) {
         return this.marked[v];
     }
+
+    function topSort() {
+        var stack = [];
+        var visited = [];
+        for (var i = 0; i < this.vertices; i++) {
+            visited[i] = false;
+        }
+        for (var i = 0; i < this.vertices; i++) {
+            if (visited[i] == false) {
+                this.topSortHelper(i, visited, stack);
+            }
+        }
+
+        for (var i = 0; i < stack.length; i++) {
+            if (stack[i] != undefined && visited[i] != false) {
+                console.log(this.vertexList[stack[i]]);
+            }
+        }
+
+    }
+
+    function topSortHelper(v, visited, stack) {
+        visited[v] = true;
+        for (var w of this.adj[v]) {
+            if (!visited[w]) {
+                this.topSortHelper(visited[w], visited, stack);
+            }
+        }
+        stack.push(v);
+    }
 }
 
-module.exports = {
-    Graph
-};
+var graph = new Graph(5);
+graph.addEdge(0,1);
+graph.addEdge(1,2);
+graph.addEdge(2,0);
+graph.vertexList = ["num1", "num2", "num3",
+"num4", "num5"];
+
+console.log(graph.dfs(0));
+console.log(graph.bfs(0));
+
+// module.exports = {
+//     Graph
+// };
 
