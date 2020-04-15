@@ -13,13 +13,13 @@ function seqSearchByData(arr, data) {
     for (var i = 0; i < arr.length; ++i) {
         if (arr[i] == data && i > (arr.length * 0.2)) {
             swap(arr, i, 0);
-            return true;
+            return i;
         }
         else if (arr[i] == data) {
-            return true;
+            return i;
         }
     }
-    return false;
+    return -1;
 
 }
 
@@ -47,7 +47,7 @@ function binSearch(arr, data) {
 }
 
 // 递归二分查找
-function binarySearchRecusion(num, arr, start, end) {
+function binarySearchRecusion(arr, num, start, end) {
     var len = end - start + 1;
     // 当长度为1的时候 且不等于num时
     if (len <= 1) {
@@ -58,10 +58,10 @@ function binarySearchRecusion(num, arr, start, end) {
 
     if (num < arr[center]) {
         // 左边
-        return binarySearchRecusion(num, arr, start, center - 1)
+        return binarySearchRecusion(arr, num, start, center - 1)
     } else if (num > arr[center]) {
         // 右边
-        return binarySearchRecusion(num, arr, center + 1, end)
+        return binarySearchRecusion(arr, num, center + 1, end)
     } else {
         return center;
     }
