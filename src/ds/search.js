@@ -29,7 +29,7 @@ function swap(arr, index, index1) {
     arr[index1] = temp;
 }
 
-// 循环二分插座
+// 循环二分搜索
 function binSearch(arr, data) {
     var upperBound = arr.length - 1;
     var lowerBound = 0;

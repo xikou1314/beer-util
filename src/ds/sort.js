@@ -102,7 +102,7 @@ function shellSort(arr) {
     return arr;
 }
 // 动态间隔的希尔排序
-function shellSortNynamic(arr) {
+function shellSortDynamic(arr) {
     var N = arr.length;
     var h = 1;
     while(h < N/3) {
@@ -195,7 +195,7 @@ module.exports = {
     selectionSort,
     insertionSort,
     shellSort,
-    shellSortNynamic,
+    shellSortDynamic,
     mergeSort,
     qSort
 };
