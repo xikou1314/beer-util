@@ -1,5 +1,5 @@
 TN:
-SF:/Users/yinhang/study/beer-util/src/array/index.js
+SF:C:\Users\Administrator\study\beer-util\src\array\index.js
 FN:11,(anonymous_0)
 FN:21,(anonymous_1)
 FN:21,(anonymous_2)
@@ -22,7 +22,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/date/index.js
+SF:C:\Users\Administrator\study\beer-util\src\date\index.js
 FN:7,(anonymous_0)
 FN:17,(anonymous_1)
 FN:27,(anonymous_2)
@@ -65,7 +65,7 @@ BRF:8
 BRH:7
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/BST.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\BST.js
 FN:2,Node
 FN:8,show
 FN:13,BST
@@ -260,7 +260,7 @@ BRF:46
 BRH:31
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/Graph.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\Graph.js
 FN:2,Graph
 FN:22,addEdge
 FN:28,showGraph
@@ -405,7 +405,7 @@ BRF:24
 BRH:21
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/circleLinkedList.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\circleLinkedList.js
 FN:2,CNode
 FN:7,CLList
 FN:16,find
@@ -467,7 +467,7 @@ BRF:6
 BRH:5
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/dictionary.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\dictionary.js
 FN:2,Dictionary
 FN:11,add
 FN:15,find
@@ -511,7 +511,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/doubleLinkedList.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\doubleLinkedList.js
 FN:2,DNode
 FN:8,DLList
 FN:17,dispReverse
@@ -586,7 +586,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/hashTableOpen.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\hashTableOpen.js
 FN:3,HashTableOpen
 FN:16,simpleHash
 FN:24,put
@@ -661,7 +661,7 @@ BRF:12
 BRH:5
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/hashTableSeq.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\hashTableSeq.js
 FN:4,HashTableSeq
 FN:14,simpleHash
 FN:22,put
@@ -732,7 +732,7 @@ BRF:10
 BRH:6
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/index.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\index.js
 FNF:0
 FNH:0
 DA:3,0
@@ -756,7 +756,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/linkedList.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\linkedList.js
 FN:2,Node
 FN:7,LList
 FN:15,find
@@ -815,7 +815,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/list.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\list.js
 FN:2,List
 FN:22,append
 FN:25,find
@@ -921,7 +921,7 @@ BRF:12
 BRH:9
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/queue.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\queue.js
 FN:2,Queue
 FN:11,enqueue
 FN:15,dequeue
@@ -965,7 +965,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/search.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\search.js
 FN:2,seqSearch
 FN:12,seqSearchByData
 FN:26,swap
@@ -1057,7 +1057,7 @@ BRF:24
 BRH:18
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/set.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\set.js
 FN:1,Set
 FN:13,add
 FN:22,remove
@@ -1150,13 +1150,13 @@ BRF:16
 BRH:14
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/sort.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\sort.js
 FN:43,swap
 FN:49,bubbleSort
 FN:61,selectionSort
 FN:75,insertionSort
 FN:89,shellSort
-FN:105,shellSortNynamic
+FN:105,shellSortDynamic
 FN:122,mergeSort
 FN:144,mergeArrays
 FN:173,qSort
@@ -1167,7 +1167,7 @@ FNDA:1,bubbleSort
 FNDA:1,selectionSort
 FNDA:1,insertionSort
 FNDA:1,shellSort
-FNDA:1,shellSortNynamic
+FNDA:1,shellSortDynamic
 FNDA:1,mergeSort
 FNDA:4,mergeArrays
 FNDA:11,qSort
@@ -1284,7 +1284,7 @@ BRF:20
 BRH:19
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/ds/stack.js
+SF:C:\Users\Administrator\study\beer-util\src\ds\stack.js
 FN:3,Stack
 FN:12,push
 FN:16,pop
@@ -1318,7 +1318,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/fn/index.js
+SF:C:\Users\Administrator\study\beer-util\src\fn\index.js
 FN:8,(anonymous_0)
 FN:10,(anonymous_1)
 FN:26,(anonymous_2)
@@ -1353,7 +1353,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/yinhang/study/beer-util/src/url/index.js
+SF:C:\Users\Administrator\study\beer-util\src\url\index.js
 FN:9,(anonymous_0)
 FN:19,(anonymous_1)
 FNF:2

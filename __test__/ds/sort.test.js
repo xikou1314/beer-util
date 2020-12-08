@@ -1,4 +1,4 @@
-const { bubbleSort,selectionSort,insertionSort,shellSort,shellSortNynamic,mergeSort,qSort } = require('../../src/ds/sort.js');
+const { bubbleSort,selectionSort,insertionSort,shellSort,shellSortDynamic,mergeSort,qSort } = require('../../src/ds/sort.js');
 
 describe('sort', () => {
 
@@ -22,9 +22,9 @@ describe('sort', () => {
       expect(shellSort(arr)).toEqual([1,2,42,444,523]);
     });
 
-    test('shellSortNynamic', () => {
+    test('shellSortDynamic', () => {
       var arr = [1,2,444,523,42];
-      expect(shellSortNynamic(arr)).toEqual([1,2,42,444,523]);
+      expect(shellSortDynamic(arr)).toEqual([1,2,42,444,523]);
     });
 
     test('mergeSort', () => {
