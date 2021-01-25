@@ -17,21 +17,91 @@
 
 // 2.出队 q.pop();
 
-// 3.求队列中元素个数 q.size();
-
-// 4.判断度列是否为空 q.empty();若为空返回true，否则返回false
-
-// 5.获得首元素 q.top();
-
-// 6.返回q的第一个元素  q.top();
-
-// 7.返回q的末尾元素 q.back();
+// 3.获取最大的数 q.peek()
 
 // 数组实现优先队列
 
 function ArrayPriorityQueue() {
   this.queue = new Array()
+  // 入队
+  this.push = function (num) {
+    this.queue.push(num)
+  }
+  // 出队 最大的出队
+  this.pop = function () {
+    const maxData = findMaxAndIndex()
+    if (maxData.maxIndex > -1) {
+      this.queue.splice(maxData.maxIndex, 1)
+    }
+    return maxData.max
+  }
 
-  
+  this.peek = function () {
+    const maxData = findMaxAndIndex()
+    return maxData.max
+  }
+
+
+  function findMaxAndIndex() {
+    let result = {
+      max: undefined,
+      maxIndex: -1
+    }
+    if (this.queue.length > 0) {
+      result.max = this.queue[0]
+      result.maxIndex = 0
+      for (let i = 1; i < this.queue.length - 1; i++) {
+        if (result.max < this.queue[i]) {
+          result.max = this.queue[i]
+          result.maxIndex = i
+        }
+      }
+    }
+
+    return result
+  }
+
 }
 
+// 链表实现优先队列
+
+function PriorityLinkNode (element, priority) {
+  this.element = element
+  this.priority = priority
+  this.next = null
+}
+
+function PriorityLink() {
+  this.head = new PriorityLinkNode('head', -1)
+
+  // 指向最大权重处
+  this.maxPriority = this.head
+
+  this.push = function (node) {
+    // 直接插入一个就可以了
+    node.next = this.head
+    this.head = node
+
+    if (node.priority > this.maxPriority.priority) {
+      this.maxPriority = node
+    }
+  }
+  this.pop = function() {
+    // 删除的时候要找到第二大的节点 并将指针指向
+    // 单向链表 需要先找到当前节点的前一个
+
+  }
+
+  this.peek = function() {
+
+  }
+
+  function findPrevious(item) {
+    var currNode = this.head;
+    while ((currNode.next != null) && (currNode.next.element != item)) {
+        currNode = currNode.next;
+    }
+    return currNode;
+}
+
+}
