@@ -1,4 +1,83 @@
-import { Stack } from './stack'
+
+
+function Stack() {
+  this.dataStore = [];
+  this.top = 0;
+  this.push = push;
+  this.pop = pop;
+  this.peek = peek;
+  this.length = length;
+  this.clear = clear;
+
+  function push(element) {
+    this.dataStore[this.top++] = element;
+  }
+
+  function pop() {
+    return this.dataStore[--this.top];
+  }
+
+  function peek() {
+    return this.dataStore[this.top - 1];
+  }
+
+  function length() {
+    return this.top;
+  }
+
+  function clear() {
+    this.top = 0;
+  }
+
+}
+
+// 队列
+function Queue() {
+  this.dataStore = [];
+  this.enqueue = enqueue;
+  this.dequeue = dequeue;
+  this.front = front;
+  this.back = back;
+  this.toString = toString;
+  this.empty = empty;
+  this.length = function () {
+    return this.dataStore.length
+  }
+
+  function enqueue(element) {
+    this.dataStore.push(element);
+  }
+
+  function dequeue() {
+    return this.dataStore.shift();
+  }
+
+  function front() {
+    return this.dataStore[0];
+  }
+
+  function back() {
+    return this.dataStore[this.dataStore.length - 1];
+  }
+
+  function toString() {
+    var retStr = "";
+    for (var i = 0; i < this.dataStore.length; ++i) {
+      retStr += this.dataStore[i] + "\n";
+    }
+    return retStr;
+  }
+
+  function empty() {
+    if (this.dataStore.length == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+
 
 // 优先队列的操作
 // 插入：在优先队列中插入元素，并使队列“有序”
@@ -223,6 +302,8 @@ function Node(data, left, right) {
   }
 }
 
+
+
 function PriorityTree() {
   this.root = null
 
@@ -231,7 +312,7 @@ function PriorityTree() {
 
     var node = new Node(data, null, null)
 
-    if (this.root = null) {
+    if (this.root == null) {
       this.root = node
     } else {
       var current = this.root
@@ -256,24 +337,224 @@ function PriorityTree() {
 
   }
 
-  // 先序遍历
-  this.preOrder = function() {
+  // 先序遍历 根-左-右
+  this.preOrder = function () {
     var stack = new Stack()
-    
+    var currNode = this.root
+
+    while (currNode || stack.length() > 0) {
+      while (currNode) {
+        console.log(currNode.show())
+        stack.push(currNode)
+        currNode = currNode.left
+      }
+      if (stack.length() > 0) {
+        currNode = stack.pop()
+        currNode = currNode.right
+      }
+
+    }
   }
 
+  // 中序遍历 有辅助栈 左-根-右
+  this.inOrder = function () {
+    var stack = new Stack()
+    var currNode = this.root
 
+    while (currNode || stack.length() > 0) {
+      while (currNode) {
 
+        stack.push(currNode)
+        currNode = currNode.left
+      }
+      if (stack.length() > 0) {
+        currNode = stack.pop()
+        console.log(currNode.show())
+        currNode = currNode.right
+      }
 
-  // 删除  最大/最小
-  // 获取最大值 
-  // 获取最小值
+    }
 
-  // 中序遍历
+  }
+  // 利用右线索化 + 回溯 不适用辅助栈完成中序遍历
+  this.inOrderWithoutStack = function () {
 
-  // 后序遍历
+    var p = this.root
+    while (p) {
+      var pLeft = p.left
+      if (pLeft) {
+        // 找到以p为根节点的树的最右孩子
+        while (pLeft.right && pLeft.right != p) {
+          pLeft = pLeft.right
+        }
+        // 线索化
+        if (pLeft.right == null) {
+          pLeft.right = p
+          p = p.left
+          continue
+        } else {   // 线索化后已被访问
+          pLeft.right = null // 释放指向根节点(祖先)的指针
+        }
+      }
+      console.log(p.show()) // 打印
+      p = p.right // 向上回溯或者转向右子树
+    }
 
+  }
+
+  // 后序遍历 左-右-根 
+  this.postOrder = function () {
+    var stack = new Stack()
+    var stackResult = new Stack()
+    var currNode = this.root
+    // 利用栈的后进先出原理 根-右-左
+    while (currNode || stack.length() > 0) {
+      while (currNode) {
+        stackResult.push(currNode)
+        stack.push(currNode)
+        currNode = currNode.right
+      }
+      if (stack.length() > 0) {
+        currNode = stack.pop()
+        currNode = currNode.left
+      }
+
+    }
+    while (stackResult.length() > 0) {
+      currNode = stackResult.pop()
+      console.log(currNode.show())
+    }
+  }
+
+  this.postOrderByPointer = function () {
+    var stack = new Stack()
+    var preNode = null
+    var currNode = null
+    stack.push(this.root)
+    while (stack.length() > 0) {
+      currNode = stack.peek()
+
+      if (preNode == null || preNode.left == currNode || preNode.right == currNode) {
+        if (currNode.left) {
+          stack.push(currNode.left)
+        } else if (currNode.right) {
+          stack.push(currNode.right)
+        }
+      } else if (currNode.left == preNode) {
+        if (currNode.right) {
+          stack.push(currNode.right)
+        }
+      } else {
+        console.log(currNode.show())
+        stack.pop()
+      }
+      preNode = currNode
+    }
+  }
   // 层序遍历
+  this.layOrder = function () {
+    var queue = new Queue()
+    queue.enqueue(this.root)
+    while (queue.length() > 0) {
+      var current = queue.front()
+      if (current.left) {
+        queue.enqueue(current.left)
+      }
+      if (current.right) {
+        queue.enqueue(current.right)
+      }
+      console.log(current.show())
+      queue.dequeue()
+    }
+  }
+
+  // 删除
+  // 找出权重最大的节点 删除并重整树
+  this.pop = function () {
+    var preNode = null
+    var currNode = this.root
+    while (currNode.right) {
+      preNode = currNode
+      currNode = currNode.right
+    }
+    preNode.right = null
+    return currNode.data
+  }
+
+  this.finMax = function () {
+    var currNode = this.root
+
+    while (currNode.right) {
+      currNode = currNode.right
+    }
+    return currNode.data
+  }
+
+  this.removeByMin = function (data) {
+    var currNode = this.root
+    while (currNode) {
+      if (currNode.data == data) {
+        console.log('刚好找到data', data)
+        // 分为四种情况
+
+
+        if (currNode.left && currNode.right) {
+          // 有左子树和右子树
+        } else if (currNode.left) {
+          // 只有左子树
+        } else if (currNode.right) {
+          // 只有右子树
+        } else {
+          // 既没有左子树也没有右子树
+        }
+
+
+
+        break
+      } else if (currNode.data < data) {
+        currNode = currNode.right
+
+      } else if (currNode.data > data) {
+        currNode = currNode.left
+      }
+    }
+
+
+  }
+
+  this.removeByMax = function () {
+
+  }
 
 }
 
+
+
+var tree = new PriorityTree()
+
+
+tree.insert(5)
+tree.insert(2)
+tree.insert(6)
+tree.insert(9)
+tree.insert(1)
+tree.insert(3)
+tree.insert(4)
+console.log('先序遍历开始')
+tree.preOrder()
+console.log('中序遍历开始')
+tree.inOrder()
+console.log('后序遍历开始')
+tree.postOrder()
+console.log('新后序遍历开始')
+tree.postOrderByPointer()
+console.log('层序遍历开始')
+tree.layOrder()
+console.log('线索化中序遍历')
+tree.inOrderWithoutStack()
+console.log('删除')
+tree.removeByMin(9)
+
+
+
+// 二叉堆实现优先队列
