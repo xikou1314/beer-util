@@ -1,3 +1,5 @@
+import { Stack } from './stack'
+
 // 优先队列的操作
 // 插入：在优先队列中插入元素，并使队列“有序”
 // 删除最大/最小值：删除并返回最大/最小的元素，并使队列“有序”
@@ -211,5 +213,67 @@ function SortedPriorityLink() {
 
 // 二叉搜索数实现优先队列
 
+function Node(data, left, right) {
+  this.data = data
+  this.left = left
+  this.right = right
+  this.show = show
+  function show() {
+    return this.data
+  }
+}
 
+function PriorityTree() {
+  this.root = null
+
+  // 插入
+  this.insert = function (data) {
+
+    var node = new Node(data, null, null)
+
+    if (this.root = null) {
+      this.root = node
+    } else {
+      var current = this.root
+      var parent
+      while (true) {
+        parent = current
+        if (data < current.data) {
+          current = current.left
+          if (current == null) {
+            parent.left = node
+            break
+          }
+        } else {
+          current = current.right
+          if (current == null) {
+            parent.right = node
+            break
+          }
+        }
+      }
+    }
+
+  }
+
+  // 先序遍历
+  this.preOrder = function() {
+    var stack = new Stack()
+    
+  }
+
+
+
+
+  // 删除  最大/最小
+  // 获取最大值 
+  // 获取最小值
+
+  // 中序遍历
+
+  // 后序遍历
+
+  // 层序遍历
+
+}
 
